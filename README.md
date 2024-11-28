@@ -18,7 +18,7 @@ alias g='git pull --rebase ; git add . && git status -s && git commit && git pus
 
 ## ⚠️ Advertencia:
 
-***Jamás de los jamases hagas esto, y menos aún si eres root, y todavía menos si tienes shared folders. Este comando elimina todo el sistema sin posibilidad de recuperación. Es destructivo. (lo hice sin ser root pero sí teniendo shared folders, y me arrepiento, pero bueno, al menos me divertí y me lleve una lección)***
+***Jamás de los jamases hagas esto, y menos aún si eres root, y todavía menos si tienes shared folders. Este comando elimina todo el sistema sin posibilidad de recuperación. Es destructivo. Te borra todo, hasta los iconos te borra. (Lo hice sin ser root pero sí teniendo shared folders, y me arrepiento, pero bueno, al menos me divertí y me lleve una lección)***
 
 ```bash
 rm -rvf / --no-preserve-root

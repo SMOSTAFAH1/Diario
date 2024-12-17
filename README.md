@@ -19,6 +19,7 @@ alias g='git add -A && git commit && git push'
 ## Alias: venv & delv
 
 ***venv: Crea un entorno virtual en el directorio `~` con el nombre `env` y lo activa.
+
 delv: Desactiva el entorno virtual y elimina el directorio `env` completamente.***
 
 ```

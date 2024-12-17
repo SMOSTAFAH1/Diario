@@ -1,6 +1,6 @@
 # Diario
 
-## Alias: g-res
+## Alias: g-r
 
 ***Este comando realiza un reset completo de un repositorio Git, primero haciendo un pull con rebase, luego creando una rama huérfana y forzando un push al remoto. Además, limpia el historial de Git.***
 

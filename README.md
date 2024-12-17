@@ -10,10 +10,10 @@ alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit
 
 ## Alias: g
 
-***Este alias ejecuta un `git pull` con rebase para actualizar la rama local, luego agrega los archivos modificados, muestra el estado del repositorio, realiza un commit y finalmente hace un push de los cambios al repositorio remoto. Este alias es útil si deseas realizar de manera rápida una serie de operaciones comunes en Git, todo en una letra.***
+***Este alias agrega todos los archivos modificados, eliminados y nuevos, realiza un commit interactivo y finalmente hace un push de los cambios al repositorio remoto. Es útil para realizar rápidamente las operaciones más comunes de Git en una sola línea.***
 
 ```bash
-alias g='git pull --rebase ; git add . && git status -s && git commit && git push'
+alias g='git add -A && git commit && git push'
 ```
 
 ## ⚠️ Advertencia:

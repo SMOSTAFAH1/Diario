@@ -14,7 +14,7 @@ alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit
 
 ```bash
 alias g-undo='git reset --soft HEAD~1'
-
+```
 
 ## Alias: g
 

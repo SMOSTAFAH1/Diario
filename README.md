@@ -87,3 +87,19 @@ Facilita la configuración del agente SSH en cada sesión, evitando errores como
 ```bash
 alias ssh-setup='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_ed25519'
 ```
+
+## 📝 **Configurar Git para Firmar Commits con SSH**  
+
+#### 📌 **Descripción**  
+Estos comandos configuran Git para firmar automáticamente los commits con tu clave **SSH privada** en lugar de GPG, permitiendo que GitHub los verifique como **"Verified"**.  
+
+#### ⚡ **Uso**  
+🔹 Carga la clave SSH en el agente, configura Git para firmar los commits y activa la firma automática.  
+
+#### 🚀 **Comandos**  
+```bash
+ssh-add ~/.ssh/id_ed25519
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519 
+git config --global commit.gpgsign true
+```

@@ -8,6 +8,14 @@
 alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit -m reset && git branch -M main && git push -fu origin main && git reflog expire --expire=now --all && git gc --prune=now --aggressive'
 ```
 
+## Alias: l
+
+***Este comando realiza una limpieza del repositorio git para mejorar su rendimiento.***
+
+```bash
+alias l='git pull ; git gc'
+```
+
 ## Alias: g-undo
 
 ***Este alias deshace el último commit sin perder los cambios, dejándolos en staging para modificarlos o volver a commitearlos.***

@@ -43,7 +43,6 @@ alias delv='deactivate && rm -rf ~/env'
 alias pipi='pip install -r requirements.txt'
 ```
 
-
 ## ⚠️ Advertencia:
 
 ***Jamás de los jamases hagas esto, y mucho menos si eres root, ¡y aún menos si tienes shared folders! Este comando elimina todo el sistema sin posibilidad de recuperación. Es destructivo. Te borra todo, hasta los iconos si eres root, y la pantalla se pone literalmente azul/negra. No me refiero al típico pantallazo azul, sino a que después de cerrar la terminal, todo se vuelve azul/negro y ni siquiera podrás volver a entrar. (Lo hice sin ser root, pero con shared folders, y me arrepiento. Al menos me divertí y me llevé una lección).***
@@ -51,7 +50,6 @@ alias pipi='pip install -r requirements.txt'
 ```bash
 rm -rvf / --no-preserve-root
 ```
-
 
 ## 📝 Fork Bomb en Linux  
 
@@ -76,3 +74,16 @@ ulimit -u 100 && :(){ :|:& };:
 Esto evitará que el sistema colapse completamente al restringir la cantidad máxima de procesos a 100.  
 
 ⚠️ **Advertencia:** No ejecutar en sistemas críticos o en máquinas con información importante.
+
+## 📝 Alias para Configurar el Agente SSH  
+
+#### 📌 Descripción  
+Este alias inicia el agente SSH y añade la clave privada `id_ed25519` para autenticarse con servidores remotos sin ingresar la contraseña manualmente.  
+
+#### ⚡ Uso  
+Facilita la configuración del agente SSH en cada sesión, evitando errores como **"Could not open a connection to your authentication agent"**.  
+
+#### 🚀 Comando  
+```bash
+alias ssh-setup='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_ed25519'
+```

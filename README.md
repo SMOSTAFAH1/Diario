@@ -8,6 +8,14 @@
 alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit -m reset && git branch -M main && git push -fu origin main && git reflog expire --expire=now --all && git gc --prune=now --aggressive'
 ```
 
+## Alias: l
+
+***Este comando realiza una limpieza del repositorio git para mejorar su rendimiento.***
+
+```bash
+alias l='git pull ; git gc'
+```
+
 ## Alias: g
 
 ***Este alias agrega todos los archivos modificados, eliminados y nuevos, realiza un commit interactivo y finalmente hace un push de los cambios al repositorio remoto. Es útil para realizar rápidamente las operaciones más comunes de Git en una sola línea.***

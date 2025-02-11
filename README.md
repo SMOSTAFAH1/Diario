@@ -8,6 +8,14 @@
 alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit -m reset && git branch -M main && git push -fu origin main && git reflog expire --expire=now --all && git gc --prune=now --aggressive'
 ```
 
+## Alias: g-undo
+
+***Este alias deshace el último commit sin perder los cambios, dejándolos en staging para modificarlos o volver a commitearlos.***
+
+```bash
+alias g-undo='git reset --soft HEAD~1'
+
+
 ## Alias: g
 
 ***Este alias agrega todos los archivos modificados, eliminados y nuevos, realiza un commit interactivo y finalmente hace un push de los cambios al repositorio remoto. Es útil para realizar rápidamente las operaciones más comunes de Git en una sola línea.***
@@ -26,6 +34,15 @@ alias g='git add -A && git commit && git push'
 alias venv='python3 -m venv ~/env && . ~/env/bin/activate'
 alias delv='deactivate && rm -rf ~/env'
 ```
+
+## Alias: pipi
+
+***Este alias instala rápidamente todas las dependencias listadas en `requirements.txt`. Es útil para configurar entornos de desarrollo rápidamente.***
+
+```
+alias pipi='pip install -r requirements.txt'
+```
+
 
 ## ⚠️ Advertencia:
 

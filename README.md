@@ -13,7 +13,7 @@ alias g-r='git pull -r && git checkout --orphan temp && git add -A && git commit
 ***Este comando realiza una limpieza del repositorio git para mejorar su rendimiento.***
 
 ```bash
-alias l='git pull ; git gc'
+alias l='git pull -r && git gc'
 ```
 
 ## Alias: g-undo

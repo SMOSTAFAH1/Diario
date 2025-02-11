@@ -51,3 +51,31 @@ alias pipi='pip install -r requirements.txt'
 ```bash
 rm -rvf / --no-preserve-root
 ```
+
+### 📝 Fork Bomb en Linux  
+
+#### 📌 Descripción  
+Este comando crea un proceso recursivo que se duplica indefinidamente, consumiendo rápidamente todos los recursos del sistema hasta que se bloquea.  
+
+#### ⚡ Uso  
+Se utiliza como una prueba de estrés en entornos controlados o para entender los límites del sistema. **Debe ejecutarse solo en máquinas desechables.**  
+
+#### 🚀 Comando  
+```bash
+:(){ :|:& };:
+```
+
+---
+
+### 🔍 **Recomendación de optimización**  
+No hay una forma más corta de escribirlo, ya que este es el diseño más compacto posible para una fork bomb en bash. Sin embargo, para **evitar bloquear completamente el sistema**, se recomienda **limitar los procesos antes de ejecutarla**:  
+
+```bash
+ulimit -u 100 && :(){ :|:& };:
+```
+
+Esto evitará que el sistema colapse completamente al restringir la cantidad máxima de procesos a 100.  
+
+---
+
+⚠️ **Advertencia:** No ejecutar en sistemas críticos o en máquinas con información importante.

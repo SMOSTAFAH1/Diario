@@ -133,3 +133,33 @@ Para que el icono aparezca instantáneamente en el menú de aplicaciones, añade
 ```
 
 📎 **Nota:** Primero descarga la última versión para Linux (AppImage) desde [https://cursor.com/home](https://cursor.com/home)
+
+## 📝 Configurar y cambiar versiones de Java
+
+#### 📌 Descripción  
+Comandos para instalar Java 21 y gestionar múltiples versiones de Java en el sistema.  
+
+#### ⚡ Uso  
+Permite instalar OpenJDK 21 y cambiar entre diferentes versiones de Java instaladas en el sistema cuando tienes múltiples versiones.  
+
+#### 🚀 Instalación de Java 21  
+```bash
+sudo apt update && sudo apt install openjdk-21-jdk
+```
+
+#### 🔧 Seleccionar versión de Java  
+```bash
+sudo update-alternatives --config java
+```
+
+#### 🔍 **Recomendación de optimización**  
+Para aplicar el cambio a todas las herramientas de Java (javac, jar, etc.):  
+
+```bash
+sudo update-alternatives --config java && sudo update-alternatives --config javac
+```
+
+#### ✅ Verificar instalación  
+```bash
+java -version
+```

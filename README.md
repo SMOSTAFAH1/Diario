@@ -163,3 +163,34 @@ sudo update-alternatives --config java && sudo update-alternatives --config java
 ```bash
 java -version
 ```
+
+## 📝 Generar clave pública SSH desde clave privada
+
+#### 📌 Descripción  
+Extrae automáticamente la clave pública SSH a partir de una clave privada existente. Útil cuando has perdido la clave pública pero conservas la privada.  
+
+#### ⚡ Uso  
+Permite recuperar o generar la clave pública idéntica desde cualquier dispositivo teniendo solo la clave privada. La clave pública se deriva matemáticamente de la privada (pero no al revés).  
+
+#### 🚀 Comando básico  
+```bash
+ssh-keygen -y -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub
+```
+
+#### 🧪 **Comando de verificación completo**  
+Para demostrar que funciona (borra y regenera la clave pública):  
+
+```bash
+clear && ls && sleep 1 \
+&& cat id_ed25519 && sleep 1 \
+&& cat id_ed25519.pub && sleep 1 \
+&& rm -rvf id_ed25519.pub && sleep 1 \
+&& cat id_ed25519.pub ; \
+ssh-keygen -y -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub && sleep 1 \
+&& cat id_ed25519.pub
+```
+
+#### ⚠️ **Importante**  
+- ✅ **Privada → Pública**: SÍ es posible  
+- ❌ **Pública → Privada**: NO es posible (seguridad criptográfica)  
+- La clave privada debe incluir las líneas `-----BEGIN/END-----` para ser válida

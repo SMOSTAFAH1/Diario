@@ -111,3 +111,25 @@ git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519 
 git config --global commit.gpgsign true
 ```
+
+## 📝 Instalar Cursor en Linux automáticamente (AppImage)
+
+#### 📌 Descripción  
+Este comando automatiza la instalación completa de Cursor en Linux desde un archivo AppImage descargado. Gestiona permisos, ubicación, integración de escritorio y dependencias FUSE automáticamente.  
+
+#### ⚡ Uso  
+Instala Cursor automáticamente desde `Downloads` con integración de escritorio. Útil para usuarios nuevos en Linux que tienen problemas con permisos, FUSE o sandbox de AppImages.  
+
+#### 🚀 Comando  
+```bash
+cd ~/Downloads && chmod +x Cursor*.AppImage && sudo mv Cursor*.AppImage /opt/cursor.appimage && echo -e "[Desktop Entry]\nName=Cursor\nExec=/opt/cursor.appimage --no-sandbox\nIcon=utilities-terminal\nType=Application\nCategories=Development;" | sudo tee /usr/share/applications/cursor.desktop > /dev/null && sudo apt install -y libfuse2 && /opt/cursor.appimage --no-sandbox
+```
+
+### 🔍 **Recomendación de optimización**  
+Para que el icono aparezca instantáneamente en el menú de aplicaciones, añade al final:  
+
+```bash
+&& sudo update-desktop-database
+```
+
+📎 **Nota:** Primero descarga la última versión para Linux (AppImage) desde [https://cursor.com/home](https://cursor.com/home)

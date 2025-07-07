@@ -313,3 +313,36 @@ winget upgrade --all --accept-source-agreements --accept-package-agreements
 ```
 
 📎 **Nota:** Winget está disponible en Windows 10 (1709+) y Windows 11 por defecto
+
+
+## 📝 Activar Windows y Office con PowerShell
+
+#### 📌 Descripción  
+Script de PowerShell que descarga y ejecuta automáticamente la herramienta Microsoft Activation Scripts (MAS) para activar Windows y Office de forma gratuita.  
+
+#### ⚡ Uso  
+Activa Windows y Office sin necesidad de claves de producto o software adicional. Ejecuta el activador oficial más usado de la comunidad.  
+
+#### 🚀 Comando  
+```powershell
+irm https://get.activated.win | iex
+```
+
+#### 🔧 **Comando alternativo (más explícito)**  
+```powershell
+Invoke-RestMethod https://get.activated.win | Invoke-Expression
+```
+
+#### 🔍 **Recomendación de optimización**  
+Para ejecutar directamente sin confirmaciones:  
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; irm https://get.activated.win | iex
+```
+
+#### ⚠️ **Importante**  
+- Ejecutar PowerShell como **Administrador**  
+- Deshabilitar temporalmente el antivirus si bloquea la descarga  
+- Funciona con Windows 8.1, 10, 11 y Office 2016-2021
+
+📎 **Nota:** Este script usa métodos de activación digital legítimos reconocidos por Microsoft

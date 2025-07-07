@@ -112,6 +112,47 @@ git config --global user.signingkey ~/.ssh/id_ed25519
 git config --global commit.gpgsign true
 ```
 
+## 📝 **Configurar Git para Firmar Commits con GPG**  
+
+#### 📌 **Descripción**  
+Estos comandos configuran Git para firmar automáticamente los commits con tu clave **GPG** en lugar de SSH, permitiendo que GitHub los verifique como **"Verified"**.  
+
+#### ⚡ **Uso**  
+🔹 Borra configuraciones GPG existentes, genera nueva clave, configura Git para firmar los commits y activa la firma automática.  
+
+#### 🚀 **Comandos**  
+```bash
+# 1. Borrar todo y generar nueva clave GPG
+rm -rf ~/.gnupg && mkdir ~/.gnupg && chmod 700 ~/.gnupg
+gpg --full-generate-key
+
+# 2. Ver la clave generada
+gpg --list-secret-keys --keyid-format LONG
+
+# 3. Configurar GPG en Git
+git config --global user.signingkey TUCLAVE # lo que haya después de ed25519/
+git config --global commit.gpgSign true
+gpg --armor --export TUCLAVE
+git config --global --unset gpg.format
+
+# 4. Alternativa con SSH
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519
+```
+
+#### 🔍 **Recomendación de optimización**  
+Para cambiar entre GPG y SSH automáticamente:  
+
+```bash
+# Cambiar a GPG
+git config --global --unset gpg.format && git config --global user.signingkey TUCLAVE
+
+# Cambiar a SSH  
+git config --global gpg.format ssh && git config --global user.signingkey ~/.ssh/id_ed25519
+```
+
+📎 **Nota:** Copia la salida de `gpg --armor --export TUCLAVE` y pégala en GitHub → Settings → SSH and GPG keys → New GPG key
+
 ## 📝 Instalar Cursor en Linux automáticamente (AppImage)
 
 #### 📌 Descripción  

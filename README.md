@@ -153,6 +153,45 @@ git config --global gpg.format ssh && git config --global user.signingkey ~/.ssh
 
 📎 **Nota:** Copia la salida de `gpg --armor --export TUCLAVE` y pégala en GitHub → Settings → SSH and GPG keys → New GPG key
 
+
+## 📝 Git Amend - Modificar el Último Commit
+
+#### 📌 Descripción  
+El comando `git commit --amend` permite modificar el último commit de forma segura, ya sea para añadir archivos olvidados, cambiar el mensaje o añadir firmas GPG sin crear un commit adicional.  
+
+#### ⚡ Uso  
+Perfecto para corregir errores menores en el último commit antes de hacer push, evitando commits innecesarios de "fix" en el historial.  
+
+#### ⚙️ **3 Casos de uso clave:**  
+
+**1. ✅ Añadir archivo olvidado al último commit**  
+```bash
+git add archivo.txt && git commit --amend --no-edit && git push -f
+```
+➤ Añade archivo.txt al último commit sin cambiar el mensaje.  
+
+**2. ✍️ Cambiar el mensaje del último commit**  
+```bash
+git commit --amend -m "Nuevo mensaje corregido" && git push -f
+```
+➤ Reescribe el mensaje del commit sin alterar el contenido.  
+
+**3. 🔐 Firmar el último commit con GPG**  
+```bash
+git commit --amend --no-edit --gpg-sign && git push -f
+```
+➤ Firma el commit con tu clave GPG correctamente configurada.  
+
+#### 🔍 **Recomendación de optimización**  
+Para casos complejos que combinan todas las operaciones:  
+
+```bash
+git add -A && git commit --amend -m "Mensaje corregido con archivos y firma" --gpg-sign && git push -f
+```
+
+⚠️ **Advertencia:** Solo usar `--amend` en commits que **NO** hayan sido pusheados a repositorios compartidos, ya que reescribe el historial.
+
+
 ## 📝 Instalar Cursor en Linux automáticamente (AppImage)
 
 #### 📌 Descripción  

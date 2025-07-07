@@ -274,3 +274,42 @@ ssh-keygen -y -f ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub && sleep 1 \
 - ✅ **Privada → Pública**: SÍ es posible  
 - ❌ **Pública → Privada**: NO es posible (seguridad criptográfica)  
 - La clave privada debe incluir las líneas `-----BEGIN/END-----` para ser válida
+
+## 📝 Winget Upgrade - Actualizar aplicaciones en Windows
+
+#### 📌 Descripción  
+Comandos para gestionar actualizaciones de aplicaciones instaladas usando el administrador de paquetes Winget de Windows.  
+
+#### ⚡ Uso  
+Permite ver qué aplicaciones tienen actualizaciones disponibles y ejecutar todas las actualizaciones de forma automática.  
+
+#### 🔍 Ver aplicaciones con actualizaciones disponibles  
+```cmd
+winget upgrade
+```
+
+#### 🚀 Actualizar todas las aplicaciones automáticamente  
+```cmd
+winget upgrade --all
+```
+
+#### 🔧 **Comandos adicionales útiles**  
+```cmd
+# Actualizar aplicación específica
+winget upgrade "Nombre de la aplicación"
+
+# Ver todas las aplicaciones instaladas
+winget list
+
+# Buscar aplicaciones disponibles
+winget search "nombre"
+```
+
+#### 🔍 **Recomendación de optimización**  
+Para ejecutar actualizaciones sin confirmaciones interactivas:  
+
+```cmd
+winget upgrade --all --accept-source-agreements --accept-package-agreements
+```
+
+📎 **Nota:** Winget está disponible en Windows 10 (1709+) y Windows 11 por defecto

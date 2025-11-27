@@ -346,3 +346,25 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; irm https://get.activated.win 
 - Funciona con Windows 8.1, 10, 11 y Office 2016-2021
 
 📎 **Nota:** Este script usa métodos de activación digital legítimos reconocidos por Microsoft
+
+## 📝 nm -u - Listar símbolos indefinidos de un ejecutable
+
+#### 📌 Descripción  
+Muestra funciones, métodos y símbolos externos que un ejecutable necesita de bibliotecas compartidas como GLIBC.  
+
+#### ⚡ Uso  
+Identifica dependencias externas de un binario y diagnostica errores de enlazado o bibliotecas faltantes.  
+
+#### 🚀 Comando  
+```bash
+nm -u ./ejecutable
+```
+
+#### 🔍 Recomendación de optimización  
+Para limpiar símbolos raros (@, versiones) y mostrar solo nombres de funciones:  
+
+```bash
+nm -Du ./ejecutable | sed 's/@.*//'
+```
+
+📎 **Nota:** Requiere `binutils` instalado (incluido por defecto en sistemas de desarrollo)

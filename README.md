@@ -368,3 +368,25 @@ nm -Du ./ejecutable | sed 's/@.*//'
 ```
 
 📎 **Nota:** Requiere `binutils` instalado (incluido por defecto en sistemas de desarrollo)
+
+## 📝 mrt - Herramienta de eliminación de malware de Windows
+
+#### 📌 Descripción  
+Abre la Herramienta de eliminación de software malintencionado de Microsoft para escanear y eliminar virus específicos.
+
+#### ⚡ Uso  
+Ejecuta un escaneo rápido de malware sin necesidad de instalar antivirus adicionales. Útil para limpieza básica del sistema.
+
+#### 🚀 Comando  
+```cmd
+mrt
+```
+
+#### 🔍 Recomendación de optimización  
+Para ejecutar escaneo completo directamente desde PowerShell como administrador:
+
+```powershell
+Start-Process mrt.exe -ArgumentList "/F" -Verb RunAs
+```
+
+📎 **Nota:** `mrt` viene preinstalado en Windows y se actualiza automáticamente con Windows Update
